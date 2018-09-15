@@ -9,6 +9,8 @@ goto :choice
 
 :scan
 @echo Scanning
+@echo Tip: To not be infected with viruses, you need to think about the security of the website.
+@echo Tip: If a website you are visiting has HTTP, it means that it is insecure, if it has HTTPS, it is secure.
 
 :noscan
 @echo You may close this program.
