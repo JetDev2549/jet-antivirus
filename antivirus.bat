@@ -11,7 +11,25 @@ goto :choice
 @echo Scanning
 @echo Tip: To not be infected with viruses, you need to think about the security of the website.
 @echo Tip: If a website you are visiting has HTTP, it means that it is insecure, if it has HTTPS, it is secure.
+@echo Please wait...
+
+if exist C:\virustest.txt goto :detected
 
 :noscan
-@echo You may close this program.
+
+@echo Your computer security might be affected if you do not scan your computer.
+@echo You may close this program safely.
+
+:detected
+@echo A potentially harmful piece of malware is detected on your computer
+set /P c=Do you want to remove it? [Y/N]
+if /I "%c%" EQU "Y" goto :quarantine
+if /I "%c%" EQU "N" goto :noscan
+
+:quarantine
+@echo Deleting antivirus...
+del C:\virustest.txt
+@echo Your computer is secured.
+pause
+
 pause
