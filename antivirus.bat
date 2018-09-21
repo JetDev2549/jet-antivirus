@@ -13,20 +13,23 @@ goto :choice
 @echo Tip: If a website you are visiting has HTTP, it means that it is insecure, if it has HTTPS, it is secure.
 @echo Tip: 
 @echo Please wait...
-
-
-
-
 if exist C:\Users\Jet\Desktop\virustest.txt goto :detected (
     rem file exists
 ) else goto :undetected  (
     rem file doesn't exist
 )
-:noscan
 
+
+
+
+
+:noscan
 @echo Your computer security might be affected if you do not scan your computer.
-@echo You may close this program safely.
+set /P c=Do you really want to quit this application? Your computer might be unsafe! [Y/N]
+if /I "%c%" EQU "Y" goto :scan
+if /I "%c%" EQU "N" pause
 pause
+
 
 :detected
 @echo A potentially harmful piece of malware is detected on your computer
