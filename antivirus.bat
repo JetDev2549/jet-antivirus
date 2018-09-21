@@ -1,8 +1,8 @@
 @echo off
 color 0a
-@echo Jet Antivirus 0.1 Beta 3. This will remove any viruses that are present on your computer. This is open-source.
+@echo Jet VirusDefend v0.1.2 beta
 :choice
-set /P c=Do you want to scan your computer now? [Y/N]
+set /P c=This version is unstable! Some features might be missing! Do you want to scan now? [Y/N]
 if /I "%c%" EQU "Y" goto :scan
 if /I "%c%" EQU "N" goto :noscan
 goto :choice
@@ -11,7 +11,11 @@ goto :choice
 @echo Scanning
 @echo Tip: To not be infected with viruses, you need to think about the security of the website.
 @echo Tip: If a website you are visiting has HTTP, it means that it is insecure, if it has HTTPS, it is secure.
+@echo Tip: 
 @echo Please wait...
+
+
+
 
 if exist C:\Users\Jet\Desktop\virustest.txt goto :detected (
     rem file exists
